@@ -8,15 +8,15 @@ public class Adventure {
 
     public void go() {
         Room currentRoom = new Room("a", "b");
-        Room room1 = new Room("room1", "You are in room1(s,e)");
-        Room room2 = new Room("room2", "You are in room2(w,e)");
-        Room room3 = new Room("room3", "You are in room3(s,w)");
-        Room room4 = new Room("room4", "You are in room4(n,s)");
-        Room room5 = new Room("room5", "You are in room5(s)");
-        Room room6 = new Room("room6", "You are in room6(n,s)");
-        Room room7 = new Room("room7", "You are in room7(n,e)");
-        Room room8 = new Room("room8", "You are in room8(n,w,e)");
-        Room room9 = new Room("room9", "You are in room9(n,w");
+        Room room1 = new Room("room1", "You are in room1");
+        Room room2 = new Room("room2", "You are in room2");
+        Room room3 = new Room("room3", "You are in room3");
+        Room room4 = new Room("room4", "You are in room4");
+        Room room5 = new Room("room5", "You are in room5");
+        Room room6 = new Room("room6", "You are in room6");
+        Room room7 = new Room("room7", "You are in room7");
+        Room room8 = new Room("room8", "You are in room8");
+        Room room9 = new Room("room9", "You are in room9");
 
         room1.setEast(room2);
         room1.setSouth(room4);
@@ -45,7 +45,7 @@ public class Adventure {
         room9.setNorth(room6);
         room9.setWest(room8);
 
-        while (keepPlaying){
+        while (keepPlaying) {
             System.out.println("Which direction would you like to go?(North, South, East or West)");
             input = in.nextLine();
 
