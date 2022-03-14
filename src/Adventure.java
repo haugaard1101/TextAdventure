@@ -7,7 +7,6 @@ public class Adventure {
     Scanner in = new Scanner(System.in);
 
     public void go() {
-        Room currentRoom = new Room("a", "b");
         Room room1 = new Room("room1", "You are in room1");
         Room room2 = new Room("room2", "You are in room2");
         Room room3 = new Room("room3", "You are in room3");
@@ -45,22 +44,25 @@ public class Adventure {
         room9.setNorth(room6);
         room9.setWest(room8);
 
+        Room currentRoom = room1;
+
         while (keepPlaying) {
+            System.out.println(currentRoom.getDescription());
             System.out.println("Which direction would you like to go?(North, South, East or West)");
             input = in.nextLine();
 
             if (input.equalsIgnoreCase("north")) {
                 System.out.println("You chose to travel North");
-
+                currentRoom = currentRoom.getNorth();
             } else if (input.equalsIgnoreCase("south")) {
                 System.out.println("You chose to travel South");
-
+                currentRoom = currentRoom.getSouth();
             } else if (input.equalsIgnoreCase("west")) {
                 System.out.println("You chose to travel West");
-
+                currentRoom = currentRoom.getWest();
             } else if (input.equalsIgnoreCase("east")) {
                 System.out.println("You chose to travel East");
-
+                currentRoom = currentRoom.getEast();
             } else if (input.equalsIgnoreCase("help")) {
                 System.out.println("You can move in the following directions: North, South, East and West");
             } else if (input.equalsIgnoreCase("look")) {
