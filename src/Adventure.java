@@ -9,7 +9,8 @@ public class Adventure {
     public void go() {
         Room room1 = new Room();
         room1.setRoomName("House");
-        room1.setDescription("You are in your own house");
+        room1.setDescription("""
+                You are in your own house""");
         Room room2 = new Room();
         room2.setRoomName("Abandoned Town");
         room2.setDescription("""
