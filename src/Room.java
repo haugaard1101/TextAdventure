@@ -11,7 +11,7 @@ public class Room {
         return description;
     }
 
-  public void setDescription(String description) {
+    public void setDescription(String description) {
         this.description = description;
     }
 
@@ -55,7 +55,8 @@ public class Room {
         this.east = east;
     }
 
-    Room(String roomName, String description) {
+    Room() {
 
     }
 }
+

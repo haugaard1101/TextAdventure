@@ -7,15 +7,33 @@ public class Adventure {
     Scanner in = new Scanner(System.in);
 
     public void go() {
-        Room room1 = new Room("room1", "You are in room1");
-        Room room2 = new Room("room2", "You are in room2");
-        Room room3 = new Room("room3", "You are in room3");
-        Room room4 = new Room("room4", "You are in room4");
-        Room room5 = new Room("room5", "You are in room5");
-        Room room6 = new Room("room6", "You are in room6");
-        Room room7 = new Room("room7", "You are in room7");
-        Room room8 = new Room("room8", "You are in room8");
-        Room room9 = new Room("room9", "You are in room9");
+        Room room1 = new Room();
+        room1.setRoomName("room1");
+        room1.setDescription("You are in room1");
+        Room room2 = new Room();
+        room2.setRoomName("room2");
+        room2.setDescription("You are in room2");
+        Room room3 = new Room();
+        room3.setRoomName("room3");
+        room3.setDescription("You are in room3");
+        Room room4 = new Room();
+        room4.setRoomName("room4");
+        room4.setDescription("You are in room4");
+        Room room5 = new Room();
+        room5.setRoomName("room5");
+        room5.setDescription("You are in room5");
+        Room room6 = new Room();
+        room6.setRoomName("room6");
+        room6.setDescription("You are in room6");
+        Room room7 = new Room();
+        room7.setRoomName("room7");
+        room7.setDescription("You are in room7");
+        Room room8 = new Room();
+        room8.setRoomName("room8");
+        room8.setDescription("You are in room8");
+        Room room9 = new Room();
+        room9.setRoomName("room9");
+        room9.setDescription("You are in room9");
 
         room1.setEast(room2);
         room1.setSouth(room4);
@@ -47,11 +65,22 @@ public class Adventure {
         Room currentRoom = room1;
 
         while (keepPlaying) {
+            System.out.println(currentRoom.getRoomName());
             System.out.println(currentRoom.getDescription());
             System.out.println("Which direction would you like to go?(North, South, East or West)");
             input = in.nextLine();
+            System.out.println();
 
-            if (input.equalsIgnoreCase("north")) {
+
+            if (currentRoom.getNorth() == null) {
+                System.out.println("You cannot go that way");
+            } else if (currentRoom.getSouth() == null) {
+                System.out.println("You cannot go that way");
+            } else if (currentRoom.getWest() == null) {
+                System.out.println("You cannot go that way");
+            } else if (currentRoom.getEast() == null) {
+                System.out.println("You cannot go that way");
+            } else if (input.equalsIgnoreCase("north")) {
                 System.out.println("You chose to travel North");
                 currentRoom = currentRoom.getNorth();
             } else if (input.equalsIgnoreCase("south")) {
