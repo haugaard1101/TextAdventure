@@ -74,7 +74,12 @@ public class Adventure {
             if (input.equalsIgnoreCase("north")) {
                 System.out.println("You chose to travel North");
                 currentRoom = currentRoom.getNorth();
-            } else if (input.equalsIgnoreCase("south")) {
+                if (currentRoom == null) {
+                    currentRoom.getSouth();
+            }
+
+
+            }  if (input.equalsIgnoreCase("south")) {
                 System.out.println("You chose to travel South");
                 currentRoom = currentRoom.getSouth();
             } else if (input.equalsIgnoreCase("west")) {
