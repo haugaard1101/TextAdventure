@@ -71,7 +71,6 @@ public class Adventure {
             input = in.nextLine();
             System.out.println();
 
-
             if (input.equalsIgnoreCase("north")) {
                 System.out.println("You chose to travel North");
                 currentRoom = currentRoom.getNorth();
@@ -95,7 +94,6 @@ public class Adventure {
                 System.out.println("What you want is impossible");
             }
         }
-
     }
 
     public static void main(String[] args) {

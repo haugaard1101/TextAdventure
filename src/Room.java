@@ -7,6 +7,9 @@ public class Room {
     private String description;
     private String roomName;
 
+    Room() {
+    }
+
     public String getDescription() {
         return description;
     }
@@ -55,8 +58,5 @@ public class Room {
         this.east = east;
     }
 
-    Room() {
-
-    }
 }
 
