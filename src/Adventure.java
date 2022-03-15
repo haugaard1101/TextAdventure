@@ -72,15 +72,7 @@ public class Adventure {
             System.out.println();
 
 
-            if (currentRoom.getNorth() == null) {
-                System.out.println("You cannot go that way");
-            } else if (currentRoom.getSouth() == null) {
-                System.out.println("You cannot go that way");
-            } else if (currentRoom.getWest() == null) {
-                System.out.println("You cannot go that way");
-            } else if (currentRoom.getEast() == null) {
-                System.out.println("You cannot go that way");
-            } else if (input.equalsIgnoreCase("north")) {
+            if (input.equalsIgnoreCase("north")) {
                 System.out.println("You chose to travel North");
                 currentRoom = currentRoom.getNorth();
             } else if (input.equalsIgnoreCase("south")) {
