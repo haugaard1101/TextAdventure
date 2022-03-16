@@ -1,14 +1,12 @@
 package TextAdventure;
 
-public class GameLogic {
+public class GameEngine {
 
     UserInterface ui = new UserInterface();
 
     public void go() {
 
-        ui.menu();
-
+        ui.welcomeMessage();
+        ui.playerOptions();
     }
-
-
 }

@@ -9,9 +9,6 @@ public class Room {
     private String description;
     private String roomName;
 
-    Room() {
-    }
-
     public String getDescription() {
         return description;
     }

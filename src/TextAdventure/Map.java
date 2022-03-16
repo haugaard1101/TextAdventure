@@ -8,6 +8,7 @@ public class Map {
     }
 
     void createRooms() {
+
         Room room1 = new Room();
         room1.setRoomName("House");
         room1.setDescription("""
