@@ -1,4 +1,4 @@
-package TextAdventure;
+package textAdventure;
 
 public class Map {
     private Room startRoom;
@@ -7,7 +7,7 @@ public class Map {
         createRooms();
     }
 
-    void createRooms() {
+     void createRooms() {
 
         Room room1 = new Room();
         room1.setRoomName("House");

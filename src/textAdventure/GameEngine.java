@@ -1,12 +1,13 @@
-package TextAdventure;
+package textAdventure;
 
 public class GameEngine {
 
-    UserInterface ui = new UserInterface();
+    final UserInterface ui = new UserInterface();
 
     public void go() {
 
         ui.welcomeMessage();
         ui.playerOptions();
+
     }
 }

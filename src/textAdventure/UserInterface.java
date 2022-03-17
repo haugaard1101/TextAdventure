@@ -1,11 +1,11 @@
-package TextAdventure;
+package textAdventure;
 
 import java.util.Scanner;
 
 public class UserInterface {
 
-    Scanner in = new Scanner(System.in);
-    Map adventureMap = new Map();
+    final Scanner in = new Scanner(System.in);
+    final Map adventureMap = new Map();
     private String input;
     private boolean keepPlaying = true;
     private Room currentRoom = adventureMap.getStartRoom();
