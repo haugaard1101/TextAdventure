@@ -1,5 +1,7 @@
 package textAdventure;
 
+import java.util.ArrayList;
+
 public class Room {
 
     private Room north;
@@ -8,6 +10,8 @@ public class Room {
     private Room east;
     private String description;
     private String roomName;
+    //del 2
+   // ArrayList<Items> items = new ArrayList<>();
 
     public String getDescription() {
         return description;

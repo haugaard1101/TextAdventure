@@ -9,12 +9,18 @@ public class UserInterface {
     private String input;
     private boolean keepPlaying = true;
     private Room currentRoom = adventureMap.getStartRoom();
+    GameEngine gameEngine = new GameEngine();
 
 // skal være her
     void welcomeMessage() {
         System.out.println("""
                 You wake up and winter has come early. You need to find firewood to keep you and your family warm.
                 Hurry and find the lumberyard in the forrest before it's too late!""");
+    }
+
+    public String getCommand(String XXXXXXXX){
+        System.out.print("Enter your command: ");
+        return in.nextLine();
     }
 // skal i Player
     void movement() {
@@ -51,12 +57,12 @@ public class UserInterface {
     }
 
     // skal være her
-    void playerOptions() {
-        while (keepPlaying) {
+    String playerOptions() {
+
             System.out.println(currentRoom.getRoomName());
             System.out.println(currentRoom.getDescription());
             System.out.print("\nWhich direction would you like to go?(North, South, East or West): ");
-            input = in.nextLine();
+            input = in.nextLine().trim();
             System.out.println();
 
             if (input.equalsIgnoreCase("help")) {
@@ -66,7 +72,8 @@ public class UserInterface {
             } else if (input.equalsIgnoreCase("exit")) {
                 System.out.println("Thanks for playing");
                 keepPlaying = false;
-            } else movement();
-        }
+            } //else movement();
+
+        return input;
     }
 }
