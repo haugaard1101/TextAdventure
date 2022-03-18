@@ -25,7 +25,7 @@ public class Player {
         currentRoom = currentRoom.getEast();
         return currentRoom;
     }
-
+/*
     public Room dropItem() {
 
     }
@@ -34,4 +34,5 @@ public class Player {
         inventory.add()
 
     }
+ */
 }

@@ -26,7 +26,7 @@ public class GameEngine {
             System.out.println("You can move in the following directions: North, South, East and West");
         } else if (input.equalsIgnoreCase("look")) {
             System.out.println(currentRoom.getDescription());
-            System.out.println(currentRoom.getItem());
+            System.out.println(currentRoom.getItem().toString().replace('[',' ').replace(']',' '));
         } else if (input.equalsIgnoreCase("exit")) {
             System.out.println("Thanks for playing");
             keepPlaying = false;
@@ -61,11 +61,11 @@ public class GameEngine {
                 System.out.println("You cannot go that way");
             } else
                 currentRoom = player.moveEast(currentRoom);
-        } else
-            itemsInteractions(input);
+        }// else
+           // itemsInteractions(input);
     }
 
-    public void itemsInteractions(String input) {
+   /* public void itemsInteractions(String input) {
         while (takingItem)
             if (input.equalsIgnoreCase("take")) {
 
@@ -77,4 +77,6 @@ public class GameEngine {
                 System.out.println("What you want is impossible");
     }
     //public void findItem(){}
+
+    */
 }
