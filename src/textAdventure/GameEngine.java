@@ -36,28 +36,28 @@ public class GameEngine {
             if (currentRoom.getNorth() == null) {
                 System.out.println("You cannot go that way");
             } else
-                player.moveNorth();
+                currentRoom=player.moveNorth(currentRoom);
 
         } else if (input.equalsIgnoreCase("south")) {
             System.out.println("You chose to travel South");
             if (currentRoom.getSouth() == null) {
                 System.out.println("You cannot go that way");
             } else
-                player.moveSouth();
+                currentRoom=player.moveSouth(currentRoom);
 
         } else if (input.equalsIgnoreCase("west")) {
             System.out.println("You chose to travel West");
             if (currentRoom.getWest() == null) {
                 System.out.println("You cannot go that way");
             } else
-                player.moveWest();
+                currentRoom=player.moveWest(currentRoom);
 
         } else if (input.equalsIgnoreCase("east")) {
             System.out.println("You chose to travel East");
             if (currentRoom.getEast() == null) {
                 System.out.println("You cannot go that way");
             } else
-                player.moveEast();
+                currentRoom = player.moveEast(currentRoom);
         } else
             System.out.println("What you want is impossible");
     }
