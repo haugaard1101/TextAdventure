@@ -12,11 +12,11 @@ public class UserInterface {
                 You wake up and winter has come early. You need to find firewood to keep you and your family warm.
                 Hurry and find the lumberyard in the forrest before it's too late!""");
     }
-
-    public String playerInput() {
+    public void whereToGo(){
         System.out.print("\nWhich direction would you like to go?(North, South, East or West): ");
+    }
+    public String playerInput() {
         input = in.nextLine().trim();
-        System.out.println();
         return input;
     }
 }

@@ -10,8 +10,11 @@ public class Room {
     private Room east;
     private String description;
     private String roomName;
+    private ArrayList<Item> item = new ArrayList<>();
 
-   // ArrayList<Items> items = new ArrayList<>();
+    public ArrayList<Item> getItem() {
+        return item;
+    }
 
     public String getDescription() {
         return description;
@@ -61,5 +64,8 @@ public class Room {
         this.east = east;
     }
 
+    public void addItem(Item item){
+        this.item.add(item);
+    }
 }
 

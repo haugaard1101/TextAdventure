@@ -1,22 +1,37 @@
 package textAdventure;
 
-public class Player {
-  //ArrayList<Items> inventory = new ArrayList<>();
+import java.util.ArrayList;
 
-  public Room moveNorth(Room currentRoom) {
-    currentRoom = currentRoom.getNorth();
-    return currentRoom;
-  }
-  public Room moveSouth(Room currentRoom) {
-    currentRoom = currentRoom.getSouth();
-    return currentRoom;
-  }
-  public Room moveWest(Room currentRoom) {
-    currentRoom = currentRoom.getWest();
-    return currentRoom;
-  }
-  public Room moveEast(Room currentRoom) {
-    currentRoom = currentRoom.getEast();
-    return currentRoom;
-  }
+public class Player {
+
+    private ArrayList<Item> inventory = new ArrayList<>();
+
+    public Room moveNorth(Room currentRoom) {
+        currentRoom = currentRoom.getNorth();
+        return currentRoom;
+    }
+
+    public Room moveSouth(Room currentRoom) {
+        currentRoom = currentRoom.getSouth();
+        return currentRoom;
+    }
+
+    public Room moveWest(Room currentRoom) {
+        currentRoom = currentRoom.getWest();
+        return currentRoom;
+    }
+
+    public Room moveEast(Room currentRoom) {
+        currentRoom = currentRoom.getEast();
+        return currentRoom;
+    }
+
+    public Room dropItem() {
+
+    }
+
+    public Room takeItem() {
+        inventory.add()
+
+    }
 }
