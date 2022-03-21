@@ -10,7 +10,7 @@ public class Room {
     private Room east;
     private String description;
     private String roomName;
-    private ArrayList<Item> item = new ArrayList<>();
+    private ArrayList<Item> item = new ArrayList<>(6);
 
     public ArrayList<Item> getItem() {
         return item;

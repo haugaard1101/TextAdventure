@@ -5,6 +5,7 @@ import java.util.ArrayList;
 public class Player {
 
     private ArrayList<Item> inventory = new ArrayList<>();
+    UserInterface ui = new UserInterface();
 
     public Room moveNorth(Room currentRoom) {
         currentRoom = currentRoom.getNorth();
@@ -26,13 +27,23 @@ public class Player {
         return currentRoom;
     }
 
-    public void dropItem() {
-        inventory.remove(i);
+    public void dropItem(Room currentRoom) {
+        String which = ui.playerInput();
+        for (int i = 0; i < inventory.size(); i++) {
+            if (inventory.get(i).getItemName().equals(which)) {
+                currentRoom.addItem(inventory.get(i));
+                inventory.remove(i);
+            }
+        }
     }
 
-    public void takeItem() {
-
-        inventory.add(i);
+    public void takeItem(Room currentRoom) {
+        if (currentRoom.getItem() == null) {
+            System.out.println("There is nothing of interest");
+        } else
+            for (Item i : currentRoom.getItem()) {
+                inventory.add(i);
+            }
     }
 
 }

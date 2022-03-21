@@ -3,7 +3,6 @@ package textAdventure;
 public class GameEngine {
     private Room currentRoom;
     private boolean keepPlaying = true;
-    private boolean takingItem = true;
     final Player player = new Player();
     final UserInterface ui = new UserInterface();
 
@@ -61,33 +60,21 @@ public class GameEngine {
                 System.out.println("You cannot go that way");
             } else
                 currentRoom = player.moveEast(currentRoom);
-        } else
-            itemsInteractions(input);
+        } else itemsInteractions(input);
     }
 
     public void itemsInteractions(String input) {
-        while (takingItem)
-            if (input.equalsIgnoreCase("take")) {
-                if (currentRoom.getItem() == null) {
-                    System.out.println("There is nothing of interest");
-                } else
-                    for (Item i : currentRoom.getItem()) {
-                        player.takeItem();
-                    }
-            } else if (input.equalsIgnoreCase("drop")) {
-            System.out.println("which item to drop?");
-            input = ui.playerInput();
-            for (int i = 0; i < inventory.size(); i++) {
-                if (inventory.get(i).getItemName().equals(where)) {
-                    currentRoom.dropItem(inventory.get(i));
-                    player.dropItem();
-                }
-            }
+        if (input.equalsIgnoreCase("take")) {
+            player.takeItem(currentRoom);
+        } else if (input.equalsIgnoreCase("drop")) {
+            System.out.println("which item do you want to drop?");
+            player.dropItem(currentRoom);
         } else
             System.out.println("What you want is impossible");
 
     }
 }
+
 
 //public void findItem(){}
 
