@@ -25,14 +25,14 @@ public class Player {
         currentRoom = currentRoom.getEast();
         return currentRoom;
     }
-/*
-    public Room dropItem() {
 
+    public void dropItem() {
+        inventory.remove(i);
     }
 
-    public Room takeItem() {
-        inventory.add()
+    public void takeItem() {
 
+        inventory.add(i);
     }
- */
+
 }

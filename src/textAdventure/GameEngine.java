@@ -12,9 +12,9 @@ public class GameEngine {
         currentRoom = map.getStartRoom();
 
         ui.welcomeMessage();
+        System.out.println(currentRoom.getRoomName());
+        System.out.println(currentRoom.getDescription());
         while (keepPlaying) {
-            System.out.println(currentRoom.getRoomName());
-            System.out.println(currentRoom.getDescription());
             ui.whereToGo();
             String input = ui.playerInput();
             playerOptions(input);
@@ -26,7 +26,7 @@ public class GameEngine {
             System.out.println("You can move in the following directions: North, South, East and West");
         } else if (input.equalsIgnoreCase("look")) {
             System.out.println(currentRoom.getDescription());
-            System.out.println(currentRoom.getItem().toString().replace('[',' ').replace(']',' '));
+            System.out.println(currentRoom.getItem().toString().replace('[', ' ').replace(']', ' '));
         } else if (input.equalsIgnoreCase("exit")) {
             System.out.println("Thanks for playing");
             keepPlaying = false;
@@ -61,22 +61,33 @@ public class GameEngine {
                 System.out.println("You cannot go that way");
             } else
                 currentRoom = player.moveEast(currentRoom);
-        }// else
-           // itemsInteractions(input);
+        } else
+            itemsInteractions(input);
     }
 
-   /* public void itemsInteractions(String input) {
+    public void itemsInteractions(String input) {
         while (takingItem)
             if (input.equalsIgnoreCase("take")) {
-
-                {
-                    player.takeItem();
+                if (currentRoom.getItem() == null) {
+                    System.out.println("There is nothing of interest");
                 } else
-                System.out.println("No such thing exist");
-            } else
-                System.out.println("What you want is impossible");
-    }
-    //public void findItem(){}
+                    for (Item i : currentRoom.getItem()) {
+                        player.takeItem();
+                    }
+            } else if (input.equalsIgnoreCase("drop")) {
+            System.out.println("which item to drop?");
+            input = ui.playerInput();
+            for (int i = 0; i < inventory.size(); i++) {
+                if (inventory.get(i).getItemName().equals(where)) {
+                    currentRoom.dropItem(inventory.get(i));
+                    player.dropItem();
+                }
+            }
+        } else
+            System.out.println("What you want is impossible");
 
-    */
+    }
 }
+
+//public void findItem(){}
+
