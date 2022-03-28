@@ -7,6 +7,7 @@ public class Player {
 
     private ArrayList<Item> inventory = new ArrayList<>();
     UserInterface ui = new UserInterface();
+
     private int health = 100;
 
     public int getHealth() {
@@ -63,7 +64,14 @@ public class Player {
             currentRoom.getItem().removeAll(inventory);
         }
     }
-    public void eat(){
-        
+    public void eat (){
+        String choice = ui.playerInput();
+        for (int i = 0; i < inventory.size(); i++) {
+            if (inventory.get(i).getItemName().equals(choice)) {
+                
+                inventory.remove(i);
+            }
+        }
+        System.out.println("This room now contains: " );
     }
 }

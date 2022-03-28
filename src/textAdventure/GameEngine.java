@@ -72,8 +72,8 @@ public class GameEngine {
             System.out.println("Which item do you want to drop?");
             player.dropItem(currentRoom);
         } else if (input.equalsIgnoreCase("eat")) {
-            System.out.println("Which item would you like to consume?");
-            
+            System.out.println("Which food would you like?");
+            player.eat();
         }else
             System.out.println("What you want is impossible");
 
