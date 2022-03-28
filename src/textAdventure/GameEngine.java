@@ -11,9 +11,9 @@ public class GameEngine {
         currentRoom = map.getStartRoom();
 
         ui.welcomeMessage();
-        System.out.println(currentRoom.getRoomName());
         System.out.println(currentRoom.getDescription());
         while (keepPlaying) {
+            System.out.println(currentRoom.getRoomName());
             ui.whereToGo();
             String input = ui.playerInput();
             playerOptions(input);
