@@ -13,8 +13,10 @@ public class Map {
         room1.setRoomName("House");
         room1.setDescription("""
                 You are in your own house""");
-        Item axe = new Item("axe   X","Axe");
+        Item axe = new Item("axe","Axe");
         room1.addItem(axe);
+        Item shoe = new Item("s","s");
+        room1.addItem(shoe);
 
         Room room2 = new Room();
         room2.setRoomName("Abandoned Town");

@@ -1,6 +1,7 @@
 package textAdventure;
 
 import java.util.ArrayList;
+import java.util.Locale;
 
 public class Player {
 
@@ -28,25 +29,24 @@ public class Player {
     }
 
     public void dropItem(Room currentRoom) {
-        System.out.println("Which item do you wanna drop?");
-        ui.getIn();
+        String choice = ui.playerInput();
         for (int i = 0; i < inventory.size(); i++) {
-            if (inventory.get(i).getItemName().equals(ui.playerInput())) {
+            if (inventory.get(i).getItemName().equals(choice)) {
                 currentRoom.addItem(inventory.get(i));
                 inventory.remove(i);
             }
         }
-        System.out.println("You see the room now contains: " + currentRoom.getItem());
+        System.out.println("This room now contains: " + currentRoom.getItem());
     }
 
     public void takeItem(Room currentRoom) {
         if (currentRoom.getItem().size() == 0) {
-            System.out.println("This place   ");
+            System.out.println("There is nothing to take");
         } else {
             System.out.println("Which item do you wanna pick up?");
-            ui.getIn();
+            String choice = ui.playerInput().toLowerCase(Locale.ROOT);
             for (int i = 0; i < currentRoom.getItem().size(); i++) {
-                if (currentRoom.getItem().get(i).getItemName().equals(ui.playerInput())) {
+                if (currentRoom.getItem().get(i).getItemName().equals(choice)) {
                     inventory.add(currentRoom.getItem().get(i));
                 }
             }
