@@ -13,10 +13,14 @@ public class Map {
         room1.setRoomName("House");
         room1.setDescription("""
                 You are in your own house""");
+        Food burger=new Food("burger", "Burger");
+        room1.addItem(burger);
         Item axe = new Item("axe","Axe");
         room1.addItem(axe);
         Item shoe = new Item("s","s");
         room1.addItem(shoe);
+
+
 
         Room room2 = new Room();
         room2.setRoomName("Abandoned Town");
@@ -24,8 +28,12 @@ public class Map {
                 You walk into the abandoned town.
                 It reminds you of all the people you lost last winter
                 You got to move on!""");
+        Food pizza =new Food("pizza", "Pizza");
+        room2.addItem(pizza);
         Item sword = new Item("sword","Sword");
         room2.addItem(sword);
+
+
 
         Room room3 = new Room();
         room3.setRoomName("Graveyard");
@@ -33,14 +41,20 @@ public class Map {
                 You arrive at the haunted graveyard.
                 Luckily you are just a farmer
                 So no need for battling the undead""");
+        Food fries=new Food("fries", "Fries");
+        room3.addItem(fries);
         Item shield = new Item("shield","Shield");
         room3.addItem(shield);
+
 
         Room room4 = new Room();
         room4.setRoomName("Old Road");
         room4.setDescription("""
                 You have reached the old road
                 It's pretty boring""");
+        Food spider=new Food("spider","Spider");
+        room4.addItem(spider);
+        Item 
 
         Room room5 = new Room();
         room5.setRoomName("Lumberyard");

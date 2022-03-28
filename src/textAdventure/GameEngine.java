@@ -29,6 +29,8 @@ public class GameEngine {
         } else if (input.equalsIgnoreCase("exit")) {
             System.out.println("Thanks for playing");
             keepPlaying = false;
+        } else if (input.equalsIgnoreCase("h")) {
+            System.out.println("Your current health is at " + player.getHealth());
         } else movement(input);
     }
 
