@@ -28,22 +28,30 @@ public class Player {
     }
 
     public void dropItem(Room currentRoom) {
-        String which = ui.playerInput();
+        System.out.println("Which item do you wanna drop?");
+        ui.getIn();
         for (int i = 0; i < inventory.size(); i++) {
-            if (inventory.get(i).getItemName().equals(which)) {
+            if (inventory.get(i).getItemName().equals(ui.playerInput())) {
                 currentRoom.addItem(inventory.get(i));
                 inventory.remove(i);
             }
         }
+        System.out.println("You see the room now contains: " + currentRoom.getItem());
     }
 
     public void takeItem(Room currentRoom) {
-        if (currentRoom.getItem() == null) {
-            System.out.println("There is nothing of interest");
-        } else
-            for (Item i : currentRoom.getItem()) {
-                inventory.add(i);
+        if (currentRoom.getItem().size() == 0) {
+            System.out.println("This place   ");
+        } else {
+            System.out.println("Which item do you wanna pick up?");
+            ui.getIn();
+            for (int i = 0; i < currentRoom.getItem().size(); i++) {
+                if (currentRoom.getItem().get(i).getItemName().equals(ui.playerInput())) {
+                    inventory.add(currentRoom.getItem().get(i));
+                }
             }
+            System.out.println("Your bag now contains: " + inventory);
+            currentRoom.getItem().removeAll(inventory);
+        }
     }
-
 }
