@@ -63,4 +63,7 @@ public class Player {
             currentRoom.getItem().removeAll(inventory);
         }
     }
+    public void eat(){
+        
+    }
 }

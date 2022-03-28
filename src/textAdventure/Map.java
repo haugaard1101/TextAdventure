@@ -54,7 +54,7 @@ public class Map {
                 It's pretty boring""");
         Food spider=new Food("spider","Spider");
         room4.addItem(spider);
-        Item 
+
 
         Room room5 = new Room();
         room5.setRoomName("Lumberyard");

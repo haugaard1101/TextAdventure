@@ -29,7 +29,7 @@ public class GameEngine {
         } else if (input.equalsIgnoreCase("exit")) {
             System.out.println("Thanks for playing");
             keepPlaying = false;
-        } else if (input.equalsIgnoreCase("h")) {
+        } else if (input.equalsIgnoreCase("health")) {
             System.out.println("Your current health is at " + player.getHealth());
         } else movement(input);
     }
@@ -69,9 +69,12 @@ public class GameEngine {
         if (input.equalsIgnoreCase("take")) {
             player.takeItem(currentRoom);
         } else if (input.equalsIgnoreCase("drop")) {
-            System.out.println("which item do you want to drop?");
+            System.out.println("Which item do you want to drop?");
             player.dropItem(currentRoom);
-        } else
+        } else if (input.equalsIgnoreCase("eat")) {
+            System.out.println("Which item would you like to consume?");
+            
+        }else
             System.out.println("What you want is impossible");
 
     }
