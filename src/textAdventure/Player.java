@@ -7,6 +7,15 @@ public class Player {
 
     private ArrayList<Item> inventory = new ArrayList<>();
     UserInterface ui = new UserInterface();
+    private int health = 100;
+
+    public int getHealth() {
+        return health;
+    }
+
+    public void setHealth(int health) {
+        this.health = health;
+    }
 
     public Room moveNorth(Room currentRoom) {
         currentRoom = currentRoom.getNorth();
