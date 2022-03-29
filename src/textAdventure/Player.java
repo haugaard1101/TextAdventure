@@ -64,18 +64,36 @@ public class Player {
             currentRoom.getItem().removeAll(inventory);
         }
     }
-    public void eat (){
+
+    public void eat() {
         String choice = ui.playerInput();
         for (int i = 0; i < inventory.size(); i++) {
-            if (inventory.get(i).getItemName().equals(choice) && inventory.get(i)instanceof Food) {
+            if (inventory.get(i).getItemName().equals(choice) && inventory.get(i) instanceof Food) {
                 setHealth(getHealth() + ((Food) inventory.get(i)).getFoodHealth());
+                System.out.println("You eat " + inventory.get(i) + " and heal for " + ((Food) inventory.get(i)).getFoodHealth() + " points");
                 inventory.remove(i);
-                if (getHealth() > 100){
+                if (getHealth() > 100) {
                     setHealth(100);
                 }
             } else
                 System.out.println("Why would you even think about eating that?");
         }
     }
-    
+
+    public void equip() {
+        String choice = ui.playerInput();
+        for (int i = 0; i < inventory.size(); i++) {
+            if (inventory.get(i).getItemName().equals(choice) && inventory.get(i) instanceof Weapon) {
+                XXXXXXXXXXXXXXXXXXXXXXXXXXXX
+                inventory.remove(i);
+            } else
+                System.out.println("And how would you equip that exactly?");
+        }
+    }
+
+    public void attack() {
+
+
+    }
+
 }
