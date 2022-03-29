@@ -64,11 +64,11 @@ public class Player {
             currentRoom.getItem().removeAll(inventory);
         }
     }
-    public void eat (Food food){
+    public void eat (){
         String choice = ui.playerInput();
         for (int i = 0; i < inventory.size(); i++) {
             if (inventory.get(i).getItemName().equals(choice) && inventory.get(i)instanceof Food) {
-                setHealth(getHealth() + food.getFoodHealth());
+                setHealth(getHealth() + ((Food) inventory.get(i)).getFoodHealth());
                 inventory.remove(i);
                 if (getHealth() > 100){
                     setHealth(100);
