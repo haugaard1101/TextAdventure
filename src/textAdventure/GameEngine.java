@@ -75,11 +75,18 @@ public class GameEngine {
         } else if (input.equalsIgnoreCase("eat")) {
             System.out.println("Which food would you like?");
             player.eat();
-            
-        }else
-            System.out.println("What you want is impossible");
+        } else if (input.equalsIgnoreCase("Attack")) {
+            player.attack();
 
+        } else if (input.equalsIgnoreCase("equip")) {
+            System.out.println("with item do you want to equip?");
+            player.equip();
+        }
+            else
+                System.out.println("What you want is impossible");
     }
+
+
 }
 
 

@@ -101,6 +101,7 @@ public class Player {
                 System.out.println("You are out of ammo");
             } else
                 System.out.println("You deal " + equippedWeapon.getDamage() + " damage");
+             ((RangedWeapon) equippedWeapon).setAmmo((RangedWeapon) equippedWeapon).getAmmo()-1);
         } else if (equippedWeapon != null) {
             System.out.println("You deal " + equippedWeapon.getDamage() + " damage");
         }else
