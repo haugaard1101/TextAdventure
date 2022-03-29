@@ -67,7 +67,7 @@ public class Player {
     public void eat (Food food){
         String choice = ui.playerInput();
         for (int i = 0; i < inventory.size(); i++) {
-            if (inventory.get(i).getItemName().equals(choice) && inventory.get(i).getItemName().equals(food)) {
+            if (inventory.get(i).getItemName().equals(choice) && inventory.get(i)instanceof Food) {
                 setHealth(getHealth() + food.getFoodHealth());
                 inventory.remove(i);
             } else
