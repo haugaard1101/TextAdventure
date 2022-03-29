@@ -64,14 +64,15 @@ public class Player {
             currentRoom.getItem().removeAll(inventory);
         }
     }
-    public void eat (){
+    public void eat (Food food){
         String choice = ui.playerInput();
         for (int i = 0; i < inventory.size(); i++) {
-            if (inventory.get(i).getItemName().equals(choice)) {
-                
+            if (inventory.get(i).getItemName().equals(choice) && inventory.get(i).getItemName().equals(food)) {
+                setHealth(getHealth() + food.getFoodHealth());
                 inventory.remove(i);
-            }
+            } else
+                System.out.println("Why would you even think about eating that?");
         }
-        System.out.println("This room now contains: " );
     }
+    
 }

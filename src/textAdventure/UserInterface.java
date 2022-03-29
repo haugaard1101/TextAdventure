@@ -16,10 +16,6 @@ public class UserInterface {
         System.out.print("\nWhich direction would you like to go?(North, South, East or West): ");
     }
 
-    public Scanner getIn() {
-        return in;
-    }
-
     public String playerInput() {
         input = in.nextLine().trim();
         return input;
