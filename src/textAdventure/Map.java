@@ -1,7 +1,10 @@
 package textAdventure;
 
+import java.util.Random;
+
 public class Map {
     private Room startRoom;
+    Random random = new Random();
 
     public Map(){
         createRooms();
@@ -13,13 +16,12 @@ public class Map {
         room1.setRoomName("House");
         room1.setDescription("""
                 You are in your own house""");
-        Food burger=new Food("burger", "Burger", 10);
+        Food burger = new Food("burger", "Burger", 10);
         room1.addItem(burger);
         Item axe = new Item("axe","Axe");
         room1.addItem(axe);
-        Item shoe = new Item("s","s");
-        room1.addItem(shoe);
-
+        RangedWeapon bow = new RangedWeapon("bow","Bow", random.nextInt(25)+16, 8);
+        room1.addItem(bow);
 
 
         Room room2 = new Room();
@@ -28,9 +30,9 @@ public class Map {
                 You walk into the abandoned town.
                 It reminds you of all the people you lost last winter
                 You got to move on!""");
-        Food pizza =new Food("pizza", "Pizza",20);
+        Food pizza = new Food("pizza", "Pizza",20);
         room2.addItem(pizza);
-        Item sword = new Item("sword","Sword");
+        MeleeWeapon sword = new MeleeWeapon("sword","Sword", random.nextInt(20)+11);
         room2.addItem(sword);
 
 
@@ -40,7 +42,7 @@ public class Map {
                 You arrive at the haunted graveyard.
                 Luckily you are just a farmer
                 So no need for battling the undead""");
-        Food fries=new Food("fries", "Fries", 20);
+        Food fries = new Food("fries", "Fries", 20);
         room3.addItem(fries);
         Item shield = new Item("shield","Shield");
         room3.addItem(shield);
@@ -51,7 +53,7 @@ public class Map {
         room4.setDescription("""
                 You have reached the old road
                 It's pretty boring""");
-        Food spider=new Food("spider","Spider", -10);
+        Food spider = new Food("spider","Spider", -10);
         room4.addItem(spider);
 
 
@@ -61,12 +63,13 @@ public class Map {
                 You've done it!
                 You take as much firewood as you can carry
                 Now get home and get warmed up""");
-        Food water=new Food("water", "Water", 15);
+        Food water = new Food("water", "Water", 15);
         room5.addItem(water);
         Item firewood = new Item("firewood","Firewood");
         room5.addItem(firewood);
         Item holyGrail = new Item("holy grail","Holy Grail");
         room5.addItem(holyGrail);
+
 
         Room room6 = new Room();
         room6.setRoomName("Highway");
@@ -74,7 +77,7 @@ public class Map {
                 You're at the highway
                 Some hooded figures suddenly rush at you. They are robbers!
                 But when they found out you have nothing of worth, they leave""");
-        Food bread =new Food("bread", "Bread",10);
+        Food bread = new Food("bread", "Bread",10);
         room6.addItem(bread);
 
 
@@ -83,7 +86,7 @@ public class Map {
         room7.setDescription("""
                 You pass the great lake
                 It is completely frozen over""");
-        Food badEgg=new Food("BadEgg", "badegg",10);
+        Food badEgg = new Food("BadEgg", "badegg",10);
         room7.addItem(badEgg);
 
 
@@ -91,7 +94,7 @@ public class Map {
         room8.setRoomName("Forrest");
         room8.setDescription("""
                 You have reached the forrest. You are close to the lumberyard""");
-        Food fish =new Food("fish", "Fish", 10);
+        Food fish = new Food("fish", "Fish", 10);
         room8.addItem(fish);
         Item gold = new Item("gold","Gold");
         room8.addItem(gold);
@@ -102,7 +105,7 @@ public class Map {
         room9.setDescription("""
                 You walk in the shadow of your lords castle
                 It was abandoned after the last ork raid""");
-        Food bacon=new Food("bacon", "Bacon", 30);
+        Food bacon = new Food("bacon", "Bacon", 30);
         room9.addItem(bacon);
 
         room1.setEast(room2);
