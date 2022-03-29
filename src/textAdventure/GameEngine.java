@@ -1,10 +1,13 @@
 package textAdventure;
 
+import java.awt.*;
+
 public class GameEngine {
     private Room currentRoom;
     private boolean keepPlaying = true;
     final Player player = new Player();
     final UserInterface ui = new UserInterface();
+
 
     public void go() {
         final Map map = new Map();
@@ -74,6 +77,7 @@ public class GameEngine {
         } else if (input.equalsIgnoreCase("eat")) {
             System.out.println("Which food would you like?");
             player.eat();
+
         }else
             System.out.println("What you want is impossible");
 

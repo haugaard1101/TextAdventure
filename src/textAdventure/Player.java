@@ -9,6 +9,7 @@ public class Player {
     UserInterface ui = new UserInterface();
 
     private int health = 100;
+    private Weapon equippedWeapon;
 
     public int getHealth() {
         return health;
@@ -44,6 +45,9 @@ public class Player {
             if (inventory.get(i).getItemName().equals(choice)) {
                 currentRoom.addItem(inventory.get(i));
                 inventory.remove(i);
+                if (inventory.get(i).equals(equippedWeapon)){
+                    equippedWeapon=null;
+                }
             }
         }
         System.out.println("This room now contains: " + currentRoom.getItem());
@@ -84,8 +88,8 @@ public class Player {
         String choice = ui.playerInput();
         for (int i = 0; i < inventory.size(); i++) {
             if (inventory.get(i).getItemName().equals(choice) && inventory.get(i) instanceof Weapon) {
-                XXXXXXXXXXXXXXXXXXXXXXXXXXXX
-                inventory.remove(i);
+                equippedWeapon = ((Weapon) inventory.get(i));
+
             } else
                 System.out.println("And how would you equip that exactly?");
         }
@@ -93,7 +97,14 @@ public class Player {
 
     public void attack() {
 
+        if (equippedWeapon != null) {
+            System.out.println("you have a weapon");
+            if (equippedWeapon instanceof RangedWeapon)
+            System.out.println("you deal " +((RangedWeapon) equippedWeapon).getAmmo());
+        }
+
+        else
+            System.out.println("you dont have a weapon");
 
     }
-
 }
