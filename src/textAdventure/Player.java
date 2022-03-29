@@ -70,6 +70,9 @@ public class Player {
             if (inventory.get(i).getItemName().equals(choice) && inventory.get(i)instanceof Food) {
                 setHealth(getHealth() + food.getFoodHealth());
                 inventory.remove(i);
+                if (getHealth() > 100){
+                    setHealth(100);
+                }
             } else
                 System.out.println("Why would you even think about eating that?");
         }

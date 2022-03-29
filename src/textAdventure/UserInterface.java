@@ -20,5 +20,19 @@ public class UserInterface {
         input = in.nextLine().trim();
         return input;
     }
+    public void health(Player player){
+        System.out.println("Your current health is at: " + player.getHealth());
+        if(player.getHealth() >= 100){
+            System.out.println("You're in perfect health!");
+        }
+        else if(player.getHealth() < 100 && player.getHealth() >= 75){
+            System.out.println("You're doing pretty good. Keep going.");
+        }
+        else if(player.getHealth() < 75 && player.getHealth() >= 25){
+            System.out.println("You're starting to look pretty banged up. You should eat some.");
+        }
+        else
+            System.out.println("Jesus! You're almost dead! Get some food quick!");
+    }
 }
 
