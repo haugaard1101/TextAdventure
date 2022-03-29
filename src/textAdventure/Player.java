@@ -44,10 +44,10 @@ public class Player {
         for (int i = 0; i < inventory.size(); i++) {
             if (inventory.get(i).getItemName().equals(choice)) {
                 currentRoom.addItem(inventory.get(i));
-                inventory.remove(i);
-                if (inventory.get(i).equals(equippedWeapon)){
-                    equippedWeapon=null;
+                if (inventory.get(i).equals(equippedWeapon)) {
+                    equippedWeapon = null;
                 }
+                inventory.remove(i);
             }
         }
         System.out.println("This room now contains: " + currentRoom.getItem());
@@ -97,14 +97,16 @@ public class Player {
 
     public void attack() {
         if (equippedWeapon != null && equippedWeapon instanceof RangedWeapon) {
-            if (((RangedWeapon) equippedWeapon).getAmmo()<=0) {
+            if (((RangedWeapon) equippedWeapon).getAmmo() <= 0) {
                 System.out.println("You are out of ammo");
             } else
                 System.out.println("You deal " + equippedWeapon.getDamage() + " damage");
-             ((RangedWeapon) equippedWeapon).setAmmo((RangedWeapon) equippedWeapon).getAmmo()-1);
+            int currentAmmo = ((RangedWeapon) equippedWeapon).getAmmo();
+            ((RangedWeapon) equippedWeapon).setAmmo(currentAmmo-1);
+            System.out.println(currentAmmo);
         } else if (equippedWeapon != null) {
             System.out.println("You deal " + equippedWeapon.getDamage() + " damage");
-        }else
+        } else
             System.out.println("You dont have a weapon");
 
     }

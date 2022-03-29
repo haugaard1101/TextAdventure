@@ -77,18 +77,14 @@ public class GameEngine {
             player.eat();
         } else if (input.equalsIgnoreCase("Attack")) {
             player.attack();
-
         } else if (input.equalsIgnoreCase("equip")) {
             System.out.println("with item do you want to equip?");
             player.equip();
-        }
-            else
-                System.out.println("What you want is impossible");
+        } else
+            System.out.println("What you want is impossible");
     }
 
-
 }
-
 
 //public void findItem(){}
 

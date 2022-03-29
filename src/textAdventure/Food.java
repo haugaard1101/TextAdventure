@@ -11,12 +11,5 @@ public class Food extends Item {
     Food(String name, String description, int foodHealth) {
         super(name, description);
         this.foodHealth=foodHealth;
-
-
-
     }
-
-
-
-
 }
