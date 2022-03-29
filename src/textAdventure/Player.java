@@ -96,15 +96,15 @@ public class Player {
     }
 
     public void attack() {
-
-        if (equippedWeapon != null) {
-            System.out.println("you have a weapon");
-            if (equippedWeapon instanceof RangedWeapon)
-            System.out.println("you deal " +((RangedWeapon) equippedWeapon).getAmmo());
-        }
-
-        else
-            System.out.println("you dont have a weapon");
+        if (equippedWeapon != null && equippedWeapon instanceof RangedWeapon) {
+            if (((RangedWeapon) equippedWeapon).getAmmo()<=0) {
+                System.out.println("You are out of ammo");
+            } else
+                System.out.println("You deal " + equippedWeapon.getDamage() + " damage");
+        } else if (equippedWeapon != null) {
+            System.out.println("You deal " + equippedWeapon.getDamage() + " damage");
+        }else
+            System.out.println("You dont have a weapon");
 
     }
 }

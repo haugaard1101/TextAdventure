@@ -20,7 +20,7 @@ public class UserInterface {
         input = in.nextLine().trim();
         return input;
     }
-    public void health(Player player){
+    public void healthOption(Player player){
         System.out.println("Your current health is at: " + player.getHealth());
         if(player.getHealth() >= 100){
             System.out.println("You're in perfect health!");

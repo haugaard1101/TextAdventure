@@ -1,7 +1,5 @@
 package textAdventure;
 
-import java.awt.*;
-
 public class GameEngine {
     private Room currentRoom;
     private boolean keepPlaying = true;
@@ -33,7 +31,7 @@ public class GameEngine {
             System.out.println("Thanks for playing");
             keepPlaying = false;
         } else if (input.equalsIgnoreCase("health")) {
-            System.out.println("Your current health is at " + player.getHealth());
+            ui.healthOption(player);
         } else movement(input);
     }
 
@@ -77,7 +75,7 @@ public class GameEngine {
         } else if (input.equalsIgnoreCase("eat")) {
             System.out.println("Which food would you like?");
             player.eat();
-
+            
         }else
             System.out.println("What you want is impossible");
 
