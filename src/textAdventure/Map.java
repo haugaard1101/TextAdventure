@@ -20,7 +20,7 @@ public class Map {
         room1.addItem(burger);
         Item axe = new Item("axe","Axe");
         room1.addItem(axe);
-        RangedWeapon bow = new RangedWeapon("bow","Bow", random.nextInt(25)+16, 8);
+        RangedWeapon bow = new RangedWeapon("bow","Bow", random.nextInt(25)+16, 3);
         room1.addItem(bow);
 
 

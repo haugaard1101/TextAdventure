@@ -102,8 +102,12 @@ public class Player {
             } else
                 System.out.println("You deal " + equippedWeapon.getDamage() + " damage");
             int currentAmmo = ((RangedWeapon) equippedWeapon).getAmmo();
-            ((RangedWeapon) equippedWeapon).setAmmo(currentAmmo-1);
-            System.out.println(currentAmmo);
+            ((RangedWeapon) equippedWeapon).setAmmo(currentAmmo - 1);
+            if (currentAmmo <= 0) {
+                ((RangedWeapon) equippedWeapon).setAmmo(currentAmmo = 0);
+                System.out.println(currentAmmo);
+            } else
+                System.out.println(currentAmmo - 1);
         } else if (equippedWeapon != null) {
             System.out.println("You deal " + equippedWeapon.getDamage() + " damage");
         } else
