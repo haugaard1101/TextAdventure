@@ -25,7 +25,7 @@ public class GameEngine {
         if (input.equalsIgnoreCase("help")) {
             System.out.println("""
                     You can move in the following directions: North, South, East and West
-                    if you write (look, health, take, drop, equip, eat, attack, exit)
+                    You can write (look, health, take, drop, equip, eat, attack, exit)
                       "look" you will see what you have in that room.
                       "health" it shows you how many lives you have left.
                       "take" you will take the item from that room.
@@ -87,7 +87,7 @@ public class GameEngine {
         } else if (input.equalsIgnoreCase("eat")) {
             System.out.println("Which food would you like?");
             player.eat();
-        } else if (input.equalsIgnoreCase("Attack")) {
+        } else if (input.equalsIgnoreCase("attack")) {
             player.attack();
         } else if (input.equalsIgnoreCase("equip")) {
             System.out.println("with item do you want to equip?");
