@@ -47,7 +47,9 @@ public class Map {
                 You arrive at the haunted graveyard.
                 Luckily you are just a farmer
                 So no need for battling the undead""");
-        Item shield = new Item("Shield","A large wooden shield, fitted with a leather strap and a handle for your left arm");
+        Item shield = new Item("Shield", """
+                A large wooden shield, fitted with a leather strap and a handle for your left arm
+                The front is faded, but you can still make out a white lion with a blue background""");
         room3.addItem(shield);
 
 
@@ -66,12 +68,10 @@ public class Map {
                 You've done it!
                 You take as much firewood as you can carry
                 Now get home and get warmed up""");
-        Food water = new Food("water", "Water", 15);
-        room5.addItem(water);
-        Item firewood = new Item("firewood","Firewood");
+        Food waterskin = new Food("Waterskin", "A small leather bag containing refreshing water", 15);
+        room5.addItem(waterskin);
+        Item firewood = new Item("Firewood","Logs and branches seasoned, keeping it dry and perfect for burning");
         room5.addItem(firewood);
-        Item holyGrail = new Item("holy grail","Holy Grail");
-        room5.addItem(holyGrail);
 
 
         Room room6 = new Room();
@@ -80,8 +80,6 @@ public class Map {
                 You're at the highway
                 Some hooded figures suddenly rush at you. They are robbers!
                 But when they found out you have nothing of worth, they leave""");
-        Food bread = new Food("bread", "Bread",10);
-        room6.addItem(bread);
 
 
         Room room7 = new Room();
@@ -89,18 +87,18 @@ public class Map {
         room7.setDescription("""
                 You pass the great lake
                 It is completely frozen over""");
-        Food badEgg = new Food("BadEgg", "badegg",10);
-        room7.addItem(badEgg);
-
+        Food fish = new Food("Fish",
+                """
+        A freshly caught fish. It might be a catfish or a bluegill
+        You don't know your fish..""", 10);
+        room7.addItem(fish);
 
         Room room8 = new Room();
         room8.setRoomName("Forrest");
         room8.setDescription("""
                 You have reached the forrest. You are close to the lumberyard""");
-        Food fish = new Food("fish", "Fish", 10);
-        room8.addItem(fish);
-        Item gold = new Item("gold","Gold");
-        room8.addItem(gold);
+        Item goldpouch = new Item("Gold Pouch","A small leather pouch containing a few gold coins");
+        room8.addItem(goldpouch);
 
 
         Room room9 = new Room();
@@ -108,8 +106,7 @@ public class Map {
         room9.setDescription("""
                 You walk in the shadow of your lords castle
                 It was abandoned after the last ork raid""");
-        Food bacon = new Food("bacon", "Bacon", 30);
-        room9.addItem(bacon);
+
 
         room1.setEast(room2);
         room1.setSouth(room4);

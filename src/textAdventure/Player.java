@@ -50,7 +50,7 @@ public class Player {
                 inventory.remove(i);
             }
         }
-        System.out.println("This room now contains: " + currentRoom.getItem());
+        System.out.println("This room now contain: " + currentRoom.getItem());
     }
 
     public void takeItem(Room currentRoom) {
@@ -64,7 +64,7 @@ public class Player {
                     inventory.add(currentRoom.getItem().get(i));
                 }
             }
-            System.out.println("Your bag now contains: " + inventory);
+            System.out.println("Your bag now contain: " + inventory);
             currentRoom.getItem().removeAll(inventory);
         }
     }
@@ -89,7 +89,7 @@ public class Player {
         for (int i = 0; i < inventory.size(); i++) {
             if (inventory.get(i).getItemName().equals(choice) && inventory.get(i) instanceof Weapon) {
                 equippedWeapon = ((Weapon) inventory.get(i));
-
+                System.out.println("You equip a " + equippedWeapon);
             } else
                 System.out.println("And how would you equip that exactly?");
         }
@@ -107,7 +107,7 @@ public class Player {
                 ((RangedWeapon) equippedWeapon).setAmmo(currentAmmo = 0);
                 System.out.println(currentAmmo);
             } else
-                System.out.println(currentAmmo - 1);
+                System.out.println("You have " + (currentAmmo - 1) + "arrows left in your quiver");
         } else if (equippedWeapon != null) {
             System.out.println("You deal " + equippedWeapon.getDamage() + " damage");
         } else
