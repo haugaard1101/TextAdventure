@@ -23,7 +23,19 @@ public class GameEngine {
 
     public void playerOptions(String input) {
         if (input.equalsIgnoreCase("help")) {
-            System.out.println("You can move in the following directions: North, South, East and West");
+            System.out.println("""
+                    You can move in the following directions: North, South, East and West
+                    if you write (look, health, take, drop, equip, eat, attack, exit)
+                      "look" you will see what you have in that room.
+                      "health" it shows you how many lives you have left.
+                      "take" you will take the item from that room.
+                      "drop" you can drop that item.
+                      "equip" move the item from your back to your hand.
+                      "attack" ya it means you attack (come on!) 
+                      "exit" that means you are done playing.. see you next time.... 
+                      
+                    """);
+
         } else if (input.equalsIgnoreCase("look")) {
             System.out.println(currentRoom.getDescription());
             System.out.println(currentRoom.getItem().toString().replace('[', ' ').replace(']', ' '));
