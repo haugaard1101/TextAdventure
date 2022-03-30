@@ -31,8 +31,8 @@ public class GameEngine {
                       "take" you will take the item from that room.
                       "drop" you can drop that item.
                       "equip" move the item from your back to your hand.
-                      "attack" ya it means you attack (come on!) 
-                      "exit" that means you are done playing.. see you next time.... 
+                      "attack" ya it means you attack (come on!)
+                      "exit" that means you are done playing.. see you next time....
                       
                     """);
 
