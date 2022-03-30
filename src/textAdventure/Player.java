@@ -107,9 +107,9 @@ public class Player {
                 ((RangedWeapon) equippedWeapon).setAmmo(currentAmmo = 0);
                 System.out.println(currentAmmo);
             } else
-                System.out.println("You have " + (currentAmmo - 1) + "arrows left in your quiver");
+                System.out.println("You have " + (currentAmmo - 1) + " arrows left in your quiver \n");
         } else if (equippedWeapon != null) {
-            System.out.println("You deal " + equippedWeapon.getDamage() + " damage");
+            System.out.println("You deal " + equippedWeapon.getDamage() + " damage\n ");
         } else
             System.out.println("You dont have a weapon");
 
