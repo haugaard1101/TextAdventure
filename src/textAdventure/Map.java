@@ -16,11 +16,12 @@ public class Map {
         room1.setRoomName("House");
         room1.setDescription("""
                 You are in your own house""");
-        Food burger = new Food("burger", "Burger", 10);
-        room1.addItem(burger);
-        Item axe = new Item("axe","Axe");
+        Food apple = new Food("Apple", "A nice and juicy red apple", 10);
+        room1.addItem(apple);
+        Item axe = new Item("Axe","An old woodcutter axe. It is quite rusty, but it'll get the job done");
         room1.addItem(axe);
-        RangedWeapon bow = new RangedWeapon("bow","Bow", random.nextInt(25)+16, 3);
+        RangedWeapon bow = new RangedWeapon("Bow","Your fathers hunting bow. It have served you well for many years"
+                , random.nextInt((20-10)+1)+10, 8);
         room1.addItem(bow);
 
 
@@ -30,9 +31,13 @@ public class Map {
                 You walk into the abandoned town.
                 It reminds you of all the people you lost last winter
                 You got to move on!""");
-        Food pizza = new Food("pizza", "Pizza",20);
-        room2.addItem(pizza);
-        MeleeWeapon sword = new MeleeWeapon("sword","Sword", random.nextInt(20)+11);
+        Food hardtack = new Food("Hardtack"
+                , "A stale, hard and flavourless cracker. You've always hated hardtack..",20);
+        room2.addItem(hardtack);
+        MeleeWeapon sword = new MeleeWeapon("Sword","""
+                The sword consist of a long, straight blade, sharp-edged on one or both sides,
+                with one end pointed and the other fixed in a hilt with the pommel reassembling a lion's head"""
+                , random.nextInt((22-15)+1)+15);
         room2.addItem(sword);
 
 
@@ -42,9 +47,7 @@ public class Map {
                 You arrive at the haunted graveyard.
                 Luckily you are just a farmer
                 So no need for battling the undead""");
-        Food fries = new Food("fries", "Fries", 20);
-        room3.addItem(fries);
-        Item shield = new Item("shield","Shield");
+        Item shield = new Item("Shield","A large wooden shield, fitted with a leather strap and a handle for your left arm");
         room3.addItem(shield);
 
 
@@ -53,8 +56,8 @@ public class Map {
         room4.setDescription("""
                 You have reached the old road
                 It's pretty boring""");
-        Food spider = new Food("spider","Spider", -10);
-        room4.addItem(spider);
+        Food rat = new Food("Rat","A somewhat recently deceased rat", -10);
+        room4.addItem(rat);
 
 
         Room room5 = new Room();
